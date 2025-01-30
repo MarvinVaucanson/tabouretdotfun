@@ -29,11 +29,17 @@ button{
     align-items: center;
 }
 
+.button_menu{
+  display: flex;
+  justify-content: center;
+}
+
 .menu{
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 5%;
 }
 
 .switch {

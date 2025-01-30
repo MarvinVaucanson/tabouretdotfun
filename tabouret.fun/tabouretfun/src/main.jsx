@@ -5,7 +5,6 @@ import Tabouret from './components/Tabouret.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
     <Tabouret></Tabouret>
   </StrictMode>,
 )
