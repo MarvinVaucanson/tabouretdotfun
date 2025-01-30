@@ -1,0 +1,164 @@
+body{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p{
+    margin-bottom: 2%;
+}
+
+.switch{
+    // margin-bottom: 10%;
+    position: relative; 
+    z-index: 10; 
+}
+
+.body-alternate {
+    background: linear-gradient(-45deg, #E40303, #FF8C00, #FFED00, #008026, #004CFF, #732982 );
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+    height: 100vh;
+    display: flex;
+}
+
+button{
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+
+        &:before {
+            position: absolute;
+            content: "🪑";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-image: url('../assets/tabouret.png');
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+    }
+
+    input:checked + .slider {
+        animation: gradient0 3s ease infinite;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+}
+
+.fun-texte{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .fun-image {
+    animation: rotating 2s linear infinite;
+  }
+
+@keyframes gradient0 {
+    from, to { background-color: #E40303;}
+    20%      { background-color: #FF8C00;}
+    40%      { background-color: #FFED00; }
+    60%      { background-color: #008026; }
+    80%      { background-color: #004CFF;  }
+    90%      { background-color: #732982; }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .noball{
+    display: none;
+  }
+
+  .box img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: gradient0 3s ease infinite;
+    position: absolute;
+    -webkit-animation: moveX 10s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -moz-animation: moveX 10s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -o-animation: moveX 10s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    animation: moveX 10s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  }
+  
+  @-webkit-keyframes moveX {
+    from { left: 0; } to { left: 100%; }
+  }
+  @-moz-keyframes moveX {
+    from { left: 0; } to { left: 100%; }
+  }
+  @-o-keyframes moveX {
+    from { left: 0; } to { left: 100%; }
+  }
+  @keyframes moveX {
+    from { left: 0; } to { left: 100%; }
+  }
+  
+  @-webkit-keyframes moveY {
+    from { top: 0; } to { top: 100%; }
+  }
+  @-moz-keyframes moveY {
+    from { top: 0; } to { top: 100%; }
+  }
+  @-o-keyframes moveY {
+    from { top: 0; } to { top: 100%; }
+  }
+  @keyframes moveY {
+    from { top: 0; } to { top: 100%; }
+  }
