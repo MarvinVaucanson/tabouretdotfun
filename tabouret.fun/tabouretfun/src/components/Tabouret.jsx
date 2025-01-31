@@ -1,24 +1,42 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import tabouretnoFun from '../assets/tabouret.png';
 import tabouretFun from '../assets/tabouretFun.png';
 import tabouretBdsm from '../assets/tabouretBdsm.png';
+import tabouretFurr from '../assets/tabouretFurr.png';
+
 
 import '../styles/tabouret.scss';
 
 const Tabouret = () => {
     const [funValue, setFunValue] = useState(false);
     const [bdsmValue, setbdsmValue] = useState(false)
+    const [furrValue,setfurrValue] = useState(false)
 
     const handleFunChange = () => {
         setFunValue(!funValue);
+        console.log(document.body.className)
+        document.body.classList.replace(document.body.className,'body-alternate')
         setbdsmValue(false)
-        document.body.classList.toggle('body-alternate')
+        setfurrValue(false)
     };
     const handleBDSMChange = () => {
         setbdsmValue(!bdsmValue);
+        document.body.classList.replace(document.body.className,'body-alternate-2')
         setFunValue(false)
-        document.body.classList.toggle('body-alternate')
+        setfurrValue(false)
     };
+    const handleFurrChange = () => {
+        setfurrValue(!furrValue)
+        document.body.classList.replace(document.body.className,'body-alternate')
+        setbdsmValue(false)
+        setFunValue(false)
+    }
+
+    useEffect(()=>{
+        if(!funValue && !furrValue && !bdsmValue){
+            document.body.classList.replace(document.body.className,'body')
+        }
+    },[funValue,bdsmValue,furrValue])
 
     return (
         <>
@@ -38,9 +56,16 @@ const Tabouret = () => {
                         <span className="slider"></span>
                     </label>
                 </div>
+                <div className='menu'>
+                    <p className={furrValue ? 'fun-texte' : 'no-fun-texte'}>{furrValue ? "desactiver les furrys" : "activer le agrou"}</p>
+                    <label className="switch">
+                        <input type="checkbox" onChange={handleFurrChange} checked={furrValue} />
+                        <span className="slider"></span>
+                    </label>
+                </div>
             </div>
             <div>
-                <img src={funValue ? tabouretFun : (bdsmValue ? tabouretBdsm :tabouretnoFun)} className={
+                <img src={funValue ? tabouretFun : (bdsmValue ? tabouretBdsm : (furrValue ? tabouretFurr : tabouretnoFun))} className={
                     funValue ? 'fun-image' : (bdsmValue ? 'bdsm-image':'no-fun-image')
                 } alt="Tabouret" />
             </div>
