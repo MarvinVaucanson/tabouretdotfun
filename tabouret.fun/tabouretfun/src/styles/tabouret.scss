@@ -16,15 +16,15 @@ p{
     z-index: 10; 
 }
 
-.body-alternate {
-    background: linear-gradient(-45deg, #E40303, #FF8C00, #FFED00, #008026, #004CFF, #732982 );
+.body-alternate-lgbt {
+    background: var(--main-gradient, rgb(255,255,255));
     background-size: 400% 400%;
     animation: gradient 12s ease infinite;
     height: 100vh;
     display: flex;
 }
 
-.body-alternate-2 {
+.body-alternate-cuir {
   background-image:url("../assets/background.png");
   background-size: cover;
 }
@@ -173,3 +173,4 @@ button{
   @keyframes moveY {
     from { top: 0; } to { top: 100%; }
   }
+  
