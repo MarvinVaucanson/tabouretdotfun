@@ -1,15 +1,18 @@
 # 🪑 Tabouret.fun
 
-## 🚀 Release 6.7.12
+### 🚀 Release 6.7.13
 
-## 🌮 Tacos Cordon Bleu Update
+## 🐢 Tortue Tabouret Update
 
-## 📋 Change Log
+## 📋 Change Log 6.7.13
+
+
+
+## 📋 Change Log 6.7.12 🌮 Tacos Cordon Bleu Update
 
 * ➕ **Ajout** : Nouveau bouton dédié à la spécialité lyonnaise *tacos cordon bleu*, améliorant l’expérience utilisateur et apportant une touche de modernité.
 * 🔄 **Remplacement** : Mise à jour du système d’IA, l’ancienne version du tabouret fun a été remplacée par une nouvelle implémentation sans IA.
 * 🛠️ **Refactorisation** : Amélioration de la structure du code pour une meilleure maintenabilité, modularité et évolutivité.
-
 
 ## 🔮 Prochaines fonctionnalités (à venir)
 

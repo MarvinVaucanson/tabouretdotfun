@@ -4,6 +4,7 @@ import tabouretFun from '../assets/tabouretFun.png';
 import tabouretBdsm from '../assets/tabouretBdsm.png';
 import tabouretFurr from '../assets/tabouretFurr.png';
 import tacosImage from '../assets/cordonbleuT.png';
+import tabouretBerth from '../assets/tabouretBerth.png';
 
 import '../styles/tabouret.scss';
 
@@ -12,7 +13,8 @@ const MODES = {
     FUN: 'fun',
     CUIR: 'cuir',
     AGROU: 'agrou',
-    TACOS: 'tacos'
+    TACOS: 'tacos',
+    TORTUE: 'tortue'
 };
 
 const MODE_CONFIG = {
@@ -47,6 +49,14 @@ const MODE_CONFIG = {
         image: tabouretnoFun,
         cssClass: 'body-alternate-tacos',
         cssAnimation: ''
+    },
+    [MODES.TORTUE]: {
+        label: 'tortue',
+        activeText: 'Dire au revoir à Berth',
+        inactiveText: 'Dire bonjour à Berth',
+        image: tabouretBerth,
+        cssClass: 'body-alternate-tortue',
+        cssAnimation:''
     }
 };
 
@@ -80,6 +90,7 @@ const Tabouret = () => {
         if (activeMode === MODES.FUN) return tabouretFun;
         if (activeMode === MODES.CUIR) return tabouretBdsm;
         if (activeMode === MODES.AGROU) return tabouretFurr;
+        if (activeMode == MODES.TORTUE) return tabouretBerth;
         return tabouretnoFun;
     };
 
@@ -95,9 +106,9 @@ const Tabouret = () => {
 
     return (
       <div key={mode} className='menu'>
-        <p className={isActive ? 'fun-texte' : 'no-fun-texte'}>
-          {isActive ? config.activeText : config.inactiveText}
-        </p>
+            <p className={isActive ? 'fun-texte' : 'no-fun-texte'}>
+                {isActive ? config.activeText : config.inactiveText}
+            </p>
         <label className="switch">
           <input 
             type="checkbox" 
@@ -124,7 +135,7 @@ const Tabouret = () => {
             {Object.values(MODES).map(mode => renderModeButton(mode))}
         </div>
 
-        <div>
+        <div className={activeMode === MODES.TORTUE ? 'tutel-cadre':''}>
             {activeMode === MODES.TACOS ? <img src={tacosImage} className='tacos'></img>:<></>}
             <img 
                 src={getDisplayImage()} 
@@ -132,6 +143,7 @@ const Tabouret = () => {
                 alt="Tabouret" 
             />
         </div>
+        {activeMode === MODES.TORTUE ? <h1 className='tutel-text'>Tutel</h1>:<></>}
     </>
     );
 };
