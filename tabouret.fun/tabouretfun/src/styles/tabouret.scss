@@ -29,6 +29,11 @@ p{
   background-size: cover;
 }
 
+.body-alternate-tacos {
+  background-image:url("../assets/background_chamas.png");
+  background-size:auto;
+}
+
 button{
     justify-content: center;
     align-items: center;
@@ -108,6 +113,24 @@ button{
   }
   .fun-image {
     animation: rotating 2s linear infinite;
+  }
+
+  .tacos {
+    animation: dropFromTop 2s ease-out forwards;
+    display: flex;
+    align-items: center;
+    position: absolute;
+  }
+
+  @keyframes dropFromTop {
+    from {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(calc(0px - 15vh));
+      opacity: 1;
+    }
   }
 
 @keyframes gradient0 {
