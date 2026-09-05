@@ -5,6 +5,7 @@ import tabouretBdsm from '../assets/tabouretBdsm.png';
 import tabouretFurr from '../assets/tabouretFurr.png';
 import tacosImage from '../assets/cordonbleuT.png';
 import tabouretBerth from '../assets/tabouretBerth.png';
+import tabouretPlanck from '../assets/tabouretPlanck.png';
 
 import '../styles/tabouret.scss';
 
@@ -14,7 +15,8 @@ const MODES = {
     CUIR: 'cuir',
     AGROU: 'agrou',
     TACOS: 'tacos',
-    TORTUE: 'tortue'
+    TORTUE: 'tortue',
+    PLANCK: 'planck'
 };
 
 const MODE_CONFIG = {
@@ -57,6 +59,14 @@ const MODE_CONFIG = {
         image: tabouretBerth,
         cssClass: 'body-alternate-tortue',
         cssAnimation:''
+    },
+    [MODES.PLANCK]: {
+        label: 'plancker',
+        activeText: 'Sortir de la cave',
+        inactiveText: 'Entrer dans les backrooms',
+        image: tabouretPlanck,
+        cssClass: 'body-altenate-planck',
+        cssAnimation:''
     }
 };
 
@@ -91,6 +101,7 @@ const Tabouret = () => {
         if (activeMode === MODES.CUIR) return tabouretBdsm;
         if (activeMode === MODES.AGROU) return tabouretFurr;
         if (activeMode == MODES.TORTUE) return tabouretBerth;
+        if (activeMode == MODES.PLANCK) return tabouretPlanck;
         return tabouretnoFun;
     };
 
