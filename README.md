@@ -1,15 +1,15 @@
 # 🪑 Tabouret.fun
 
-### 🚀 Release 6.7.13
+### 🚀 Release 6.7.14
 
-## 🐢 Tortue Tabouret Update
+Planqué Tabouret Update
 
-## 📋 Change Log 6.7.13
-
-* ➕ **Ajout** : Nouveau bouton dédié à Berth et au tutel avec le *tabouret tortue*, améliorant l’expérience utilisateur et apportant une touche de modernité engagé politiquement.
-
+* ➕ **Ajout** : Nouveau bouton dédié à la Planck et à la science avec le *tabouret de la planck*, améliorant l’expérience utilisateur. #jevoteUNEFaucrous
 
 # Historique des updates
+## 📋 Change Log 6.7.13 🐢 Tortue Tabouret Update
+
+* ➕ **Ajout** : Nouveau bouton dédié à Berth et au tutel avec le *tabouret tortue*, améliorant l’expérience utilisateur et apportant une touche de modernité engagé politiquement.
 
 ## 📋 Change Log 6.7.12 🌮 Tacos Cordon Bleu Update
 

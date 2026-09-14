@@ -146,7 +146,7 @@ const Tabouret = () => {
             {Object.values(MODES).map(mode => renderModeButton(mode))}
         </div>
 
-        <div className={activeMode === MODES.TORTUE ? 'tutel-cadre':''}>
+        <div className={`tabouret-display ${activeMode === MODES.TORTUE ? 'tutel-cadre' : ''}`}>
             {activeMode === MODES.TACOS ? <img src={tacosImage} className='tacos'></img>:<></>}
             <img 
                 src={getDisplayImage()} 
